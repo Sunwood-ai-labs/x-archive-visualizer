@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makiの生成AI活動まとめ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+Decol&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: "Kaisei Decol", serif;
+            background-color: #1a1a2e;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            justify-content: center;
+        }
+        .card {
+            background-color: #16213e;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            text-align: center;
+            color: #00fff5;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px #00fff5;
+        }
+        h2 {
+            color: #ff6b6b;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        h2 i {
+            margin-right: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        li {
+            margin-bottom: 10px;
+            padding: 5px;
+            background-color: #1f4068;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        li:hover {
+            background-color: #2a5298;
+        }
+        @media screen and (max-width: 1200px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media screen and (max-width: 600px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <h1><i class="fas fa-robot"></i> Makiの生成AI活動まとめ</h1>
+    <div class="container">
+
+        <div class="card">
+            <h2><i class="fas fa-bolt"></i> フルスタックAI開発 (Bolt, v0系)</h2>
+            <ul>
+                <li>2024/10/17: 配信終了。作成アプリへのリンクあり。BoltのBedrock改造版を使用。</li>
+                <li>2024/10/09: v0にMarkdownプレビュー/編集機能追加。</li>
+                <li>2024/10/07: Boltをローカルで起動、解説記事公開。</li>
+                <li>2024/10/06: Bolt検証、カスタマイズ、README日本語化。</li>
+                <li>2024/10/06: システム生成AI「bolt」フォーク。</li>
+                <li>2024/09/23: v0＋o1でSAA攻略サイト作成。</li>
+                <li>2024/09/21: v0＋o1でSAA学習分析ダッシュボード作成。</li>
+                <li>2024/09/21: v0でアニメーション作成。</li>
+                <li>2024/09/20: v0でSkyBox差し替え。</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h2><i class="fas fa-code"></i> LLMアプリケーション開発 (Cline, LangChainなど)</h2>
+            <ul>
+                <li>2024/10/17: cline用システムプロンプト更新。</li>
+                <li>2024/10/09: Cline(旧Claude Dev) v2.0リリース確認。</li>
+                <li>2024/09/29: 自動リリースノート/README更新AI「IRIS」改良。</li>
+                <li>2024/09/25: o1でSAA問題解説/攻略法出力定義書作成。</li>
+                <li>2024/09/23: markwhen生成要件定義書作成、claude-dev新機能検証。</li>
+                <li>2024/09/23: リポジトリ初期化要件定義書作成、claude-dev x ghコマンド検証。</li>
+                <li>2024/09/21: o1で自動クリックツール作成。</li>
+                <li>2024/09/15: langchain x vscodeプラグイン作成、公開。</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h2><i class="fas fa-brain"></i> エージェント開発 (OpenAI Swarm)</h2>
+            <ul>
+                <li>2024/10/17: OpenAI Swarm要件定義書x clineでコード作成。</li>
+                <li>2024/10/17: OpenAI Swarmフレームワーク検証、要件定義書作成中。</li>
+                <li>2024/10/14: swarm triage_agentで処理シミュレーション、テスト実施。</li>
+                <li>2024/10/13: swarm Weather Agentで天気情報取得、メール送信機能実装。</li>
+                <li>2024/10/12: swarm 航空会社CSエージェント実装、精度検証、フローチャート可視化、personal_shopper修正。</li>
+                <li>2024/10/12: Swarmサンプル日本語化、解説記事公開、agent_handoff実行。</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h2><i class="fas fa-cogs"></i> MLOps / 開発自動化</h2>
+            <ul>
+                <li>2024/10/11: HarmonAI III公開。</li>
+                <li>2024/10/10: MOA v0.6.2 リリース。</li>
+                <li>2024/10/03: MOA v0.6.0 リリース。</li>
+                <li>2024/09/29: SourceSage v5.1.0リリース。</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h2><i class="fas fa-film"></i> 動画生成 / 画像編集</h2>
+            <ul>
+                <li>2024/10/17: Hailuoで動画生成検証。</li>
+                <li>2024/10/17: #AliveStudio 検証。</li>
+                <li>2024/10/16: PIKA新エフェクト検証。</li>
+                <li>2024/10/13: lumaでAIフレーム補間検証。</li>
+                <li>2024/09/28: Llama-3.2-1B-Instruct-q4f16_1-MLC WebGPU検証。</li>
+                <li>2024/09/21: V2 + UEFN検証。</li>
+                <li>2024/09/20: V2 + UEFN検証。</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h2><i class="fas fa-cube"></i> 3D生成</h2>
+            <ul>
+                <li>2024/10/13: Rodinを検証。</li>
+                <li>2024/09/28: Kyle-Liz/3DFauna_demoで画像から3Dモデル生成を試す。</li>
+                <li>2024/09/27: アバターメイカーとVroidStudioでキャラクター作成、Streamlitで表示、アニメーション、照明変更、リップシンク、2人表示を実装。</li>
+                <li>2024/09/24: アバターメイカーで作成したキャラクターをStreamlitで表示。</li>
+                <li>2024/09/21: アバターメイカーでキャラクター作成。</li>
+
+
+            </ul>
+        </div>
+        <div class="card">
+            <h2><i class="fas fa-database"></i> RAG / ナレッジマネジメント</h2>
+            <ul>
+                <li>2024/10/15: AWS Chatbot と Slack 連携、Amazon Bedrock エージェント呼び出し。</li>
+                <li>2024/10/09: open webui + pipeline + langfuseで社内向けAI WEB UIを作成。</li>
+                <li>2024/10/02: GoogleのNotebookLM完全無料を実現した「Open NotebookLM」を検証。</li>
+                <li>2024/10/06: open-notebooklmを改造中。</li>
+                <li>2024/09/23: OpenMusicを使用。</li>
+                <li>2024/09/14: DataGemma RAGをKaggleノートブックで動作確認。</li>
+                <li>2024/10/02: dailypapershackernewsで論文ランキング表示。</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h2><i class="fas fa-search"></i> 物体検知</h2>
+            <ul>
+                <li>2024/09/29: EVF-SAM2、CCTV_YOLOのデモを検証。</li>
+                <li>2024/09/12: Object Cutterを試す。</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h2><i class="fas fa-microphone"></i> 音声</h2>
+            <ul>
+                <li>2024/10/01: Whisper Large v3 Turboを試す。</li>
+            </ul>
+        </div>
+         <div class="card">
+            <h2><i class="fas fa-tools"></i> その他 / ツール検証</h2>
+            <ul>
+                 <li>2024/10/15: 新しいMarpテーマ「Cybercat Dreamscape」を作成、公開。</li>
+                <li>2024/10/14: OpenUIのDemoを検証。</li>
+                <li>2024/10/14: Ovis 1.6 Gemma2を検証。</li>
+                <li>2024/10/12: sassにデビュー、Marpテーマ作成。</li>
+                <li>2024/10/11: MarpWebEditorを使用。</li>
+                <li>2024/10/10: GeminiでCode executionを使用。GitLabのセットアップ、Docker-composeでGitLabを起動。</li>
+                <li>2024/10/08: Gradio 5 のCitrusテーマを使用。</li>
+                <li>2024/10/07: Lotusを使用。</li>
+                <li>2024/09/30: 生成AIアプリケーション運用特化の新アプローチ「GenOps」の情報収集。GEAR.indigoのリバースエンジニアリングモードを使用。</li>
+                <li>2024/09/28: 天秤AIを使用。</li>
+                <li>2024/09/27: 面白そうな論文をclaudeに解説してもらい、v0で可視化。</li>
+                <li>2024/09/20: 面白そうな都市シミュレーションをフォーク、ハッキングチャレンジサイトに挑戦。</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
