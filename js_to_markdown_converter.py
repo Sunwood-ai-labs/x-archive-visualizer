@@ -2,20 +2,17 @@ import json
 from datetime import datetime
 import re
 from loguru import logger
+from collections import defaultdict
 
 logger.add("debug.log", rotation="500 MB")
 
 def extract_json_objects(js_content):
-    # 最初の '[' と最後の ']' を探す
     start = js_content.find('[')
     end = js_content.rfind(']')
     if start == -1 or end == -1:
         raise ValueError("有効なJSONアレイが見つかりません")
     
-    # JSONアレイを抽出
     json_array = js_content[start:end+1]
-    
-    # JSONとして解析
     return json.loads(json_array)
 
 def parse_js_to_markdown(js_content):
@@ -31,37 +28,43 @@ def parse_js_to_markdown(js_content):
         logger.error(f"JSONの抽出に失敗しました: {str(e)}")
         raise
 
-    markdown_output = ""
+    tweets = []
     logger.info(f"合計 {len(json_objects)} 件のツイートを処理します")
 
     for i, tweet_obj in enumerate(json_objects, 1):
         logger.debug(f"ツイート {i}/{len(json_objects)} を処理中")
         tweet_data = tweet_obj.get('tweet', {})
         
-        # created_atを抽出
         created_at = tweet_data.get('created_at', '')
         if created_at:
-            # 日付をフォーマット
             date_obj = datetime.strptime(created_at, "%a %b %d %H:%M:%S +0000 %Y")
-            formatted_date = date_obj.strftime("%Y年%m月%d日")
         else:
-            formatted_date = "日付不明"
+            date_obj = datetime.min
             logger.warning(f"ツイート {i} の日付が見つかりません")
 
-        # full_textを抽出
         full_text = tweet_data.get('full_text', '')
         if full_text:
-            # URLを除去（簡易的な方法）
-            full_text = re.sub(r'https?://\S+', '', full_text)
-            full_text = full_text.strip()
+            full_text = re.sub(r'https?://\S+', '', full_text).strip()
         else:
             full_text = "テキスト不明"
             logger.warning(f"ツイート {i} のテキストが見つかりません")
 
-        # マークダウン形式で出力を作成
-        markdown_output += f"## {formatted_date}\n\n{full_text}\n\n"
+        tweets.append((date_obj, full_text))
 
     logger.success("全てのツイートの処理が完了しました")
+
+    # 日付でソート
+    tweets.sort(key=lambda x: x[0])
+
+    markdown_output = ""
+    current_date = None
+    for date_obj, text in tweets:
+        formatted_date = date_obj.strftime("%Y年%m月%d日") if date_obj != datetime.min else "日付不明"
+        if formatted_date != current_date:
+            markdown_output += f"## {formatted_date}\n\n"
+            current_date = formatted_date
+        markdown_output += f"{text}\n\n"
+
     return markdown_output
 
 # ファイル名
