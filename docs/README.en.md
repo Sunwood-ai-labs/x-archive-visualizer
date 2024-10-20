@@ -11,7 +11,7 @@ license: mit
 ---
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Sunwood-ai-labs/HarmonAI_III/refs/heads/main/docs/HarmonAI-III.png" width="100%">
+  <img src="https://raw.githubusercontent.com/Sunwood-ai-labs/x-archive-visualizer/refs/heads/main/docs/x-archive-visualizer.png" width="100%">
   <h1 align="center">🌟 HarmonAI III 🌟</h1>
 </p>
 <p align="center">
@@ -71,25 +71,25 @@ license: mit
 
 
 > [!IMPORTANT]
-> HarmonAI III is a template repository developed using [cline (formerly Claude Dev)](https://github.com/clinebot/cline), [SourceSage](https://github.com/Sunwood-ai-labs/SourceSage), and [claude.ai](https://claude.ai/).  The majority of the release notes, README, and commit messages were generated using the latest AI technology.
+> HarmonAI III is a template repository developed using [cline (formerly Claude Dev)](https://github.com/clinebot/cline), [SourceSage](https://github.com/Sunwood-ai-labs/SourceSage), and [claude.ai](https://claude.ai/).  A large portion of the release notes, README, and commit messages were generated using the latest AI technology.
 
 ## 🚀 Project Overview
 
-HarmonAI III is an innovative **AI repository starter kit** integrating AIRA and IRIS. This repository aims to dramatically improve developer efficiency by providing the structure and workflow for AI development projects leveraging LLMs. Version: `v1.3.0`
+HarmonAI III is an innovative **AI repository starter kit** integrating AIRA and IRIS. This repository aims to dramatically improve developer efficiency by providing the structure and workflow for AI development projects utilizing LLMs. Version: `v1.3.0`
 
 
 ## 🆕 Latest News
 
-- 🎉 **v1.3.0 Released**:  Created a basic Streamlit app structure, improved README file design, fixed several bugs, and updated the documentation. The Streamlit app now includes a feature to display the contents of the README.md file. Error handling for cases where the README.md file is missing has also been added.  Furthermore, we've added a collaborator addition script for the GitHub repository, an automated synchronization workflow with Hugging Face Hub, and an automated deployment workflow to PyPI.
+- 🎉 **v1.3.0 Release**: Created the basic structure for a Streamlit app, improved the README file design, fixed several bugs, and updated the documentation. The Streamlit app now includes a feature to read and display the README.md file. Error handling has been added for cases where the README.md file is missing.  Additionally, we've added a collaborator addition script for GitHub repositories, an automated synchronization workflow with Hugging Face Hub, and an automated deployment workflow for PyPI.
 
 
 ## ✨ Main Features
 
-1. **Integrated AI Toolset**: Provides the functionalities of AIRA and IRIS in a single package.
-2. **Ready to Use**: Easily create a repository with a high-quality initial structure by using it as a template.
+1. **Integrated AI Toolset**: Provides the functionality of AIRA and IRIS in a single package.
+2. **Ready-to-Use**: Easily create a repository with a high-quality initial structure by using it as a template.
 3. **Automated Development Workflow**: Automates commit message generation, release note creation, and issue management.
-4. **Multilingual Support**: Supports international project deployment through automated README translation.
-5. **Flexible Customization**: Easily adjustable to suit the needs of your project.
+4. **Multilingual Support**: Automated README translation functionality supports international project development.
+5. **Flexible Customization**: Easily adaptable to the needs of your project.
 6. **Automated Collaborator Invitation**: Collaborator invitation script using the GitHub API.
 7. **Streamlit App**: A basic Streamlit application that displays the README.md file.
 
@@ -100,12 +100,12 @@ HarmonAI III is an innovative **AI repository starter kit** integrating AIRA and
 1. Install the necessary packages with `pip install -r requirements.txt`.
 2. Run `streamlit run app.py`.
 
-### AIRA Example:
+### AIRA Usage Example:
 ```bash
 aira --mode sourcesage commit  --config=.aira\config.dev.commit.yml --ss-model-name="gpt-4o-mini" --llm-output="llm_output.md"
 ```
 
-### IRIS Example:
+### IRIS Usage Example:
 
 Refer to the documentation of each component for detailed usage instructions.
 
@@ -125,7 +125,7 @@ Refer to the documentation of each component for detailed usage instructions.
 
 ## 🌿 Environment Setup
 
-Follow these steps to set up the HarmonAI III environment:
+To set up the HarmonAI III environment, follow these steps:
 
 1. Create a virtual environment:
    ```bash
@@ -144,7 +144,7 @@ Follow these steps to set up the HarmonAI III environment:
    pip install -r requirements.txt
    ```
 
-These steps will prepare your development environment for HarmonAI III.
+These steps will prepare the development environment for HarmonAI III.
 
 
 ## 📚 Main Components
@@ -155,20 +155,20 @@ These steps will prepare your development environment for HarmonAI III.
 
 ### 🌈 [IRIS (Intelligent Repository Issue Solver)](https://github.com/Sunwood-ai-labs/IRIS)
 - Automated issue classification
-- Automated solution suggestion
+- Automated solution suggestions
 - Automated release note generation
 - Automated README translation
 
 ## 🤝 Automated Collaborator Invitation
 
-HarmonAI III includes a script to automatically invite collaborators to the GitHub repository.  Use it with the following steps:
+HarmonAI III includes a script to automatically invite collaborators to the GitHub repository.  It can be used with the following steps:
 
 1. Create a `.env` file and set the necessary tokens:
    ```
    # GitHub access token (for collaborator invitation)
    GITHUB_TOKEN=your_github_personal_access_token_here
 
-   # The following are examples of tokens that may be used by other functions.  It's convenient to have them written down for later use.
+   # The following are examples of tokens that may be used by other functions.  It's convenient to list them for later use.
    # GITHUB_ACCESS_TOKEN=ghp_xxxxx
    # YOUR_PERSONAL_ACCESS_TOKEN_IRIS=ghp_yyyyy
    # GEMINI_API_KEY=AIzzzzz
@@ -185,13 +185,13 @@ HarmonAI III includes a script to automatically invite collaborators to the GitH
 
 3. Once the script runs successfully, a collaborator invitation will be sent to the specified user.
 
-Cautions:
-- This script requires the GitHub token to have the appropriate permissions (`repo` scope).
+Notes:
+- This script requires the GitHub token to have appropriate permissions (the `repo` scope).
 - When using it for an organization's repository, ensure that appropriate permissions are granted in the organization's settings.
-- For security, update tokens regularly and grant only the minimum necessary permissions.
-- Never commit information, including the `.env` file and tokens, to a public repository.
+- For security, regularly update the token and grant only the minimum necessary permissions.
+- Never commit information including the `.env` file or tokens to a public repository.
 
-This feature simplifies the process of adding new contributors to your project.  You can efficiently expand your team while maintaining security.
+This feature simplifies the process of adding new contributors to the project.  It allows for efficient team expansion while maintaining security.
 
 ## 🐈 Processing Flow
 
@@ -204,12 +204,12 @@ graph LR
     B -->|Human Action| C[HarmonAI III Repository Initialization]
     C -->|Automated| D[Development Work]
     D -->|Human Action| E[AIRA Automated Commits]
-    E --> H[IRIS Release Note Creation]
+    E --> H[IRIS Release Note Generation]
     H --> I[IRIS Documentation Translation]
     I --> J[Release]
     J --> K[End]
 
-    class B,D,G human;
+    class B,D human;
     class E aira;
     class F,H,I iris;
     class C auto;
@@ -229,8 +229,8 @@ HarmonAI III is licensed under the [MIT License](LICENSE).
 
 ## 🙏 Acknowledgements
 
-HarmonAI III has drawn inspiration from many open-source projects during its development. We extend our deepest gratitude to the developers of AIRA and IRIS, in particular.  We also thank iris-s-coon and Maki.
+Many open-source projects have inspired the development of HarmonAI III.  We especially thank the developers of AIRA and IRIS.  We also thank iris-s-coon and Maki.
 
 ---
 
-HarmonAI III is an excellent starter kit for achieving an AI-driven development process.  Start developing innovative AI projects based on this template!
+HarmonAI III is an excellent starter kit for achieving an AI-driven development process. Let's start developing innovative AI projects based on this template!
